@@ -1,0 +1,125 @@
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.heroHeading {
+  font-size: var(--text-60);
+  color: var(--black-03);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.heroSubHeading {
+  font-size: var(--text-40);
+  color: white;
+  background-color: var(--primary-color);
+  padding: 20px 40px;
+  margin: 0;
+}
+
+.repeat-icon {
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.about-section-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bio-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.bio-section {
+}
+
+.bio-taste-container {
+}
+
+.bio-taste-button {
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: 1px solid var(--black-02);
+  color: var(--black-02);
+  margin-right: 10px;
+}
+
+.hello-text {
+  font-size: var(--text-24);
+  color: var(--black-03);
+}
+
+.bio-text {
+  font-size: var(--text-20);
+}
+
+.social-icon-container {
+  display: flex;
+}
+
+.profile-image-container {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+}
+
+.profile-image {
+}
+
+.SocialIconList {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.SocialIconItems {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.SocialLinks {
+  text-decoration: none;
+  color: var(--black-04);
+  font-size: var(--text-20);
+}
+
+.SocialLinks:hover {
+  color: var(--black-05);
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroHeading {
+    font-size: var(--text-28);
+  }
+  .heroSubHeading {
+    font-size: var(--text-20);
+  }
+  .about-section-container {
+    flex-direction: column-reverse;
+  }
+  .profile-image-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .bio-section-container {
+    width: 95%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .bio-taste-button {
+    margin: 5px 5px;
+  }
+}
