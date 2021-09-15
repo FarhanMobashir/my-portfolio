@@ -79,33 +79,30 @@ export default function Layout({
         <h3 className={footerHeading}>© 2021 | Mobashir Farhan</h3>
         <ul className={footerList}>
           <li className={footerItems}>
-            <Link
-              className={footerLinks}
-              to="https://github.com/FarhanMobashir"
-            >
+            <a className={footerLinks} href="https://github.com/FarhanMobashir">
               <FontAwesomeIcon className={toggleIcon} icon={faGithub} />
-            </Link>
+            </a>
           </li>
           <li className={footerItems}>
-            <Link
+            <a
               className={footerLinks}
-              to="https://twitter.com/MobashirFarhan"
+              href="https://twitter.com/MobashirFarhan"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faTwitter} />
-            </Link>
+            </a>
           </li>
           <li className={footerItems}>
-            <Link
+            <a
               className={footerLinks}
-              to="https://www.linkedin.com/in/mobashirfarhan/"
+              href="https://www.linkedin.com/in/mobashirfarhan/"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faLinkedin} />
-            </Link>
+            </a>
           </li>
           <li className={footerItems}>
             <Link
               className={footerLinks}
-              to="https://www.instagram.com/farhan_mobashir001/?hl=en"
+              href="https://www.instagram.com/farhan_mobashir001/?hl=en"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faInstagram} />
             </Link>
@@ -113,7 +110,7 @@ export default function Layout({
           <li className={footerItems}>
             <Link
               className={footerLinks}
-              to="https://www.youtube.com/channel/UC2Bs66DI7Lu4aKFdsUdZQQg"
+              href="https://www.youtube.com/channel/UC2Bs66DI7Lu4aKFdsUdZQQg"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faYoutube} />
             </Link>

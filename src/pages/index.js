@@ -191,36 +191,36 @@ const IndexPage = ({ data }) => {
             <div className={socialIconContainer}>
               <ul className={SocialIconList}>
                 <li className={SocialIconItems}>
-                  <Link
+                  <a
                     className={SocialLinks}
-                    to="https://github.com/FarhanMobashir"
+                    href="https://github.com/FarhanMobashir"
                   >
                     <FontAwesomeIcon icon={faGithub} />
-                  </Link>
+                  </a>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link
+                  <a
                     className={SocialLinks}
-                    to="https://twitter.com/MobashirFarhan"
+                    href="https://twitter.com/MobashirFarhan"
                   >
                     <FontAwesomeIcon icon={faTwitter} />
-                  </Link>
+                  </a>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link
+                  <a
                     className={SocialLinks}
-                    to="https://www.linkedin.com/in/mobashirfarhan/"
+                    href="https://www.linkedin.com/in/mobashirfarhan/"
                   >
                     <FontAwesomeIcon icon={faLinkedin} />
-                  </Link>
+                  </a>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link
+                  <a
                     className={SocialLinks}
-                    to="https://www.instagram.com/farhan_mobashir001/?hl=en"
+                    href="https://www.instagram.com/farhan_mobashir001/?hl=en"
                   >
                     <FontAwesomeIcon icon={faInstagram} />
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

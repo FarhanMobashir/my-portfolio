@@ -226,6 +226,7 @@
   }
   .about-section-container {
     flex-direction: column-reverse;
+    align-items: center;
   }
   .profile-image-container {
     justify-content: center;
