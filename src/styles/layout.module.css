@@ -110,4 +110,7 @@
     padding: 5px 0px;
     box-shadow: none;
   }
+  .social-icon {
+    font-size: var(--text-20);
+  }
 }
