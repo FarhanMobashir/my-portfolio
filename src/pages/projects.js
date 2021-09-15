@@ -147,7 +147,7 @@ const ProjectsPage = ({ data }) => {
         </div>
         <Link className={backLink} to="/">
           <FontAwesomeIcon
-            style={{ marginRight: "10px" }}
+            style={{ marginLeft: "10%" }}
             icon={faLongArrowAltLeft}
           />
           Back to home

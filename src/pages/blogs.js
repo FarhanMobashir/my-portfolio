@@ -77,7 +77,9 @@ const BlogsPage = () => {
           ))}
         </div>
 
-        <Link to="/">Back to home</Link>
+        <Link style={{ marginLeft: "10%" }} to="/">
+          &larr; Back to home
+        </Link>
       </main>
     </Layout>
   );

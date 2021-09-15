@@ -71,6 +71,8 @@
 
 .posted-text {
   font-size: var(--text-14);
+  font-weight: 600;
+  color: var(--black-03);
 }
 
 .blog-link {

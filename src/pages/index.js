@@ -54,14 +54,12 @@ import {
   faGithub,
   faTwitter,
   faLinkedin,
-  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faExchangeAlt,
   faLongArrowAltRight,
-  faSun,
 } from "@fortawesome/free-solid-svg-icons";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 const attributeData = [
   "who loves software engineering",
@@ -76,7 +74,8 @@ const attributeData = [
 const bioData = {
   Casual:
     "Hello! My name is Mobashir Farhan, and I enjoy watching the sunset, eating candyfloss and waking up late in the morning.Just kidding, more importantly my friend will describe me as someone who loves to draw beautiful things, cook delicious foods, play guitar and loves to motivate them to start learning programming which sometimes irritate them 😂",
-  Professional: "Still trying to find the perfect professional introduction...",
+  Professional:
+    "I am Mobashir , and my main gig is developing software with a great taste in design that solves user problems and give them seamles experience. I also design User Interfaces(UI) both for mobile and web and in my free time I learn about UX research. Besides, I also love the subject of information security and want to contribute in making the internet a safer and healthy place. I do all this as a freelancer. Outside of that I'm useless 😄",
 };
 
 export const query = graphql`

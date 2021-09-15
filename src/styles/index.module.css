@@ -205,6 +205,16 @@
 .view-all {
   color: black;
   font-size: var(--text-16);
+  background-color: rgb(221, 221, 221);
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--primary-color);
+  transition: 0.2s;
 }
 
 @media only screen and (max-width: 600px) {
