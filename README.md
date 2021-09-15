@@ -4,9 +4,9 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  This Site is built with Gatsby
 </h1>
-
+## If you want to build one follow the steps
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
