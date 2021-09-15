@@ -14,7 +14,7 @@ import {
   footerLinks,
   footerItems,
   footerList,
-  toggleIcon,
+  socialIcon,
 } from "../styles/layout.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -80,7 +80,7 @@ export default function Layout({
         <ul className={footerList}>
           <li className={footerItems}>
             <a className={footerLinks} href="https://github.com/FarhanMobashir">
-              <FontAwesomeIcon className={toggleIcon} icon={faGithub} />
+              <FontAwesomeIcon className={socialIcon} icon={faGithub} />
             </a>
           </li>
           <li className={footerItems}>
@@ -88,7 +88,7 @@ export default function Layout({
               className={footerLinks}
               href="https://twitter.com/MobashirFarhan"
             >
-              <FontAwesomeIcon className={toggleIcon} icon={faTwitter} />
+              <FontAwesomeIcon className={socialIcon} icon={faTwitter} />
             </a>
           </li>
           <li className={footerItems}>
@@ -96,7 +96,7 @@ export default function Layout({
               className={footerLinks}
               href="https://www.linkedin.com/in/mobashirfarhan/"
             >
-              <FontAwesomeIcon className={toggleIcon} icon={faLinkedin} />
+              <FontAwesomeIcon className={socialIcon} icon={faLinkedin} />
             </a>
           </li>
           <li className={footerItems}>
@@ -104,7 +104,7 @@ export default function Layout({
               className={footerLinks}
               href="https://www.instagram.com/farhan_mobashir001/?hl=en"
             >
-              <FontAwesomeIcon className={toggleIcon} icon={faInstagram} />
+              <FontAwesomeIcon className={socialIcon} icon={faInstagram} />
             </a>
           </li>
           <li className={footerItems}>
@@ -112,7 +112,7 @@ export default function Layout({
               className={footerLinks}
               href="https://www.youtube.com/channel/UC2Bs66DI7Lu4aKFdsUdZQQg"
             >
-              <FontAwesomeIcon className={toggleIcon} icon={faYoutube} />
+              <FontAwesomeIcon className={socialIcon} icon={faYoutube} />
             </a>
           </li>
         </ul>

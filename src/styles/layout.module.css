@@ -17,9 +17,14 @@
   justify-content: center;
 }
 
-.toggleIcon {
+.social-icon {
   font-size: var(--text-24);
   color: var(--black-03);
+}
+
+.social-icon:hover {
+  color: var(--black-05);
+  transition: 0.2s;
 }
 
 .navItems {

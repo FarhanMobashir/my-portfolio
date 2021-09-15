@@ -98,12 +98,16 @@
 
 .SocialLinks:hover {
   color: var(--black-05);
-  transition: 0.2s;
 }
 
 .social-icon {
   font-size: 30px;
   color: var(--black-02);
+}
+
+.social-icon:hover {
+  color: var(--black-05);
+  transition: 0.2s;
 }
 
 /* project-section */
