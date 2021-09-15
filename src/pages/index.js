@@ -74,9 +74,9 @@ const attributeData = [
 
 const bioData = {
   Casual:
-    "Hello! My name is Mobashir Farhan, and I enjoy watching the sunset, eating candyfloss and waking up late in the morning.Just kidding, more importantly my friend will describe me as someone who loves to draw beautiful things, cook delicious foods, play guitar and loves to motivate them to start learning programming which sometimes irritate them 😂",
+    "This is Mobashir Farhan, and he enjoys watching the sunset, eating candyfloss and waking up late in the morning.Just kidding, more importantly his friend will describe him as someone who loves to draw beautiful things, cook delicious foods, play guitar and loves to motivate them to start learning programming which sometimes irritate them 😂",
   Professional:
-    "I am Mobashir , and my main gig is developing softwares that solves user problems and give them seamless experiences. I also design User Interfaces(UI) in Figma and I love that. In my free time I learn about UX research and medical science. Besides, I also love the subject of information security and want to contribute in making the internet a safer and healthy place. I do all this as a freelancer. Outside of that I'm useless 😄",
+    "Mobashir is a software developer and designer and spend his time buiding softwares that solves user problems and give them seamless experiences. He also design User Interfaces(UI) in Figma and he love that. In his free time he learn about UX research and medical science. Besides, he also loves the subject of information security and want to contribute in making the internet a safer and healthy place. He do all this as a freelancer. Outside of that, he's useless 😄",
 };
 
 export const query = graphql`
