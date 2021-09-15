@@ -4,8 +4,11 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  This Site is built with Gatsby
 </h1>
+<h4 align="center">
+  If you want to build one follow the steps
+</h4>
 
 ## 🚀 Quick start
 
