@@ -14,7 +14,7 @@ export default function PostLayout({ children, pageContext }) {
   const { title, description, author, tags, date } = pageContext.frontmatter;
   let parsedDate = new Date(date).toDateString();
   //   let tagsArray = tags.split(",");
-  console.log(tags.split(","));
+  // console.log(tags.split(","));
   return (
     <Layout title={title} description={description}>
       <h1 className={blogTitle}>{title}</h1>

@@ -17,9 +17,37 @@ import {
   profileImage,
   SocialIconItems,
   SocialIconList,
+  projectBlogSection,
+  projectBlogHeadingContainer,
+  projectBlogHeading,
+  projectBlogDescription,
   SocialLinks,
+  projectsContainer,
+  projectTitle,
+  projectCard,
+  technologyItem,
+  technologyUsedContainer,
+  projectDescription,
+  projectImage,
+  projectLink,
+  primaryButton,
+  secondaryButton,
+  contentContainer,
+  projectImageContainer,
+  viewAll,
 } from "../styles/index.module.css";
-import { StaticImage } from "gatsby-plugin-image";
+
+import {
+  blogContainer,
+  blogCard,
+  blogTitle,
+  blogImage,
+  blogLink,
+  blogDescription,
+  postedText,
+} from "../styles/blogs.module.css";
+
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -28,8 +56,12 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "gatsby";
+import {
+  faExchangeAlt,
+  faLongArrowAltRight,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
 const attributeData = [
   "who loves software engineering",
@@ -47,8 +79,47 @@ const bioData = {
   Professional: "Still trying to find the perfect professional introduction...",
 };
 
+export const query = graphql`
+  query getProject {
+    allSanityProjectPreview {
+      edges {
+        node {
+          _id
+          title
+          technologyUsed
+          sourceCode
+          liveLink
+          image {
+            asset {
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+          }
+          description
+        }
+      }
+    }
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        id
+        slug
+        frontmatter {
+          title
+          description
+          date(fromNow: true)
+          cover {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const posts = data.allMdx.nodes;
   function attributeClickHandler() {
     if (attributeIdx < attributeData.length - 1) {
       setAttributeIdx(attributeIdx + 1);
@@ -61,20 +132,17 @@ const IndexPage = () => {
   }
   const [attributeIdx, setAttributeIdx] = React.useState(0);
   const [activeTaste, setActiveTaste] = React.useState("Casual");
+
   return (
     <Layout>
       <main>
         <div className={heroSection}>
           <h1 className={heroHeading}>Hello from Mobashir</h1>
           <h3 className={heroSubHeading}>{attributeData[attributeIdx]}</h3>
-          <StaticImage
+          <FontAwesomeIcon
             onClick={attributeClickHandler}
             className={repeatIcon}
-            src="../images/repeatIcon.png"
-            alt="magnifying glass"
-            placeholder="none"
-            width={30}
-            height={30}
+            icon={faExchangeAlt}
           />
         </div>
         <div className={aboutSectionContainer}>
@@ -85,7 +153,11 @@ const IndexPage = () => {
                 className={bioTasteButton}
                 style={
                   activeTaste === "Professional"
-                    ? { backgroundColor: "#ff5678", color: "white" }
+                    ? {
+                        backgroundColor: "#ff5678",
+                        color: "white",
+                        border: "none",
+                      }
                     : {
                         backgroundColor: "white",
                         color: "#4a4a4a",
@@ -99,7 +171,11 @@ const IndexPage = () => {
                 className={bioTasteButton}
                 style={
                   activeTaste === "Casual"
-                    ? { backgroundColor: "#ff5678", color: "white" }
+                    ? {
+                        backgroundColor: "#ff5678",
+                        color: "white",
+                        border: "none",
+                      }
                     : {
                         backgroundColor: "white",
                         color: "#4a4a4a",
@@ -116,22 +192,34 @@ const IndexPage = () => {
             <div className={socialIconContainer}>
               <ul className={SocialIconList}>
                 <li className={SocialIconItems}>
-                  <Link className={SocialLinks} to="/">
+                  <Link
+                    className={SocialLinks}
+                    to="https://github.com/FarhanMobashir"
+                  >
                     <FontAwesomeIcon icon={faGithub} />
                   </Link>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link className={SocialLinks} to="/">
+                  <Link
+                    className={SocialLinks}
+                    to="https://twitter.com/MobashirFarhan"
+                  >
                     <FontAwesomeIcon icon={faTwitter} />
                   </Link>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link className={SocialLinks} to="/">
+                  <Link
+                    className={SocialLinks}
+                    to="https://www.linkedin.com/in/mobashirfarhan/"
+                  >
                     <FontAwesomeIcon icon={faLinkedin} />
                   </Link>
                 </li>
                 <li className={SocialIconItems}>
-                  <Link className={SocialLinks} to="/">
+                  <Link
+                    className={SocialLinks}
+                    to="https://www.instagram.com/farhan_mobashir001/?hl=en"
+                  >
                     <FontAwesomeIcon icon={faInstagram} />
                   </Link>
                 </li>
@@ -147,6 +235,112 @@ const IndexPage = () => {
               width={300}
               height={300}
             />
+          </div>
+        </div>
+        {/* project section */}
+        <div className={projectBlogSection}>
+          <div className={projectBlogHeadingContainer}>
+            <h1 className={projectBlogHeading}>
+              Mobashir loves to solve real world problems by developing useful
+              applications
+            </h1>
+            <p className={projectBlogDescription}>
+              Mobashir believes that computer science is all about solving
+              problems and making the world a better and safer place. Let’s have
+              a look on some of his projects
+            </p>
+            <div className={projectsContainer}>
+              {data.allSanityProjectPreview.edges.map(
+                ({ node: project }, idx) => (
+                  <div className={projectCard} key={project.id}>
+                    <div className={projectImageContainer}>
+                      <GatsbyImage
+                        className={projectImage}
+                        image={project.image.asset.gatsbyImageData}
+                        alt={project.title}
+                      />
+                    </div>
+                    <div className={contentContainer}>
+                      <h3 className={projectTitle}>{project.title}</h3>
+                      <p className={projectDescription}>
+                        {project.description}
+                      </p>
+                      <div className={technologyUsedContainer}>
+                        {project.technologyUsed.map((item) => {
+                          return (
+                            <small className={technologyItem}>{item}</small>
+                          );
+                        })}
+                      </div>
+
+                      <button className={secondaryButton}>
+                        <a
+                          className={projectLink}
+                          target="_blank"
+                          href={project.sourceCode}
+                        >
+                          Source Code
+                        </a>
+                      </button>
+                      <button className={primaryButton}>
+                        <a
+                          className={projectLink}
+                          target="_blank"
+                          href={project.liveLink}
+                        >
+                          View Live
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+            <Link className={viewAll} to="/projects">
+              VIEW ALL PROJECTS &rarr;
+            </Link>
+          </div>
+        </div>
+        {/* blog-section */}
+        <div className={projectBlogSection}>
+          <div className={projectBlogHeadingContainer}>
+            <h1 className={projectBlogHeading}>
+              Mobashir also shares his learning through his writings
+            </h1>
+            <p className={projectBlogDescription}>
+              Learning about new things is really exciting , but what’s more
+              exciting is to share the learning with the world and sharing our
+              vulnerabilities to become empathetically more powerful.
+            </p>
+            <div className={blogContainer}>
+              {posts.slice(0, 3).map((post) => (
+                <div className={blogCard} key={post.id}>
+                  <GatsbyImage
+                    className={blogImage}
+                    image={
+                      post.frontmatter.cover.childImageSharp.gatsbyImageData
+                    }
+                    alt="magnifying glass"
+                    placeholder="dominantColor"
+                    width={300}
+                    height={150}
+                  />
+                  <h3 className={blogTitle}>{post.frontmatter.title}</h3>
+                  <small className={postedText}>
+                    posted : {post.frontmatter.date}
+                  </small>
+                  <p className={blogDescription}>
+                    {post.frontmatter.description}
+                  </p>
+                  <Link className={blogLink} to={"/" + post.slug}>
+                    CHECK IT OUT <FontAwesomeIcon icon={faLongArrowAltRight} />
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <Link className={viewAll} to="/blogs">
+              VIEW ALL BLOGS &rarr;
+            </Link>
           </div>
         </div>
       </main>

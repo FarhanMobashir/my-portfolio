@@ -2,6 +2,11 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLongArrowAltLeft,
+  faLongArrowAltRight,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   heroSection,
   heroHeading,
@@ -19,6 +24,7 @@ import {
   secondaryButton,
   contentContainer,
   projectImageContainer,
+  backLink,
 } from "../styles/projects.module.css";
 export const query = graphql`
   query allSanityProjects {
@@ -33,6 +39,9 @@ export const query = graphql`
               gatsbyImageData(placeholder: DOMINANT_COLOR)
             }
           }
+          technologyUsed
+          sourceCode
+          liveLink
         }
       }
     }
@@ -63,18 +72,27 @@ const ProjectsPage = ({ data }) => {
                   <h3 className={projectTitle}>{project.title}</h3>
                   <p className={projectDescription}>{project.description}</p>
                   <div className={technologyUsedContainer}>
-                    {["HTML", "CSS", "JavaScript"].map((item) => {
+                    {project.technologyUsed.map((item) => {
                       return <small className={technologyItem}>{item}</small>;
                     })}
                   </div>
-                  <button className={primaryButton}>
-                    <a className={projectLink} target="_blank" href="#">
-                      View Live
+
+                  <button className={secondaryButton}>
+                    <a
+                      className={projectLink}
+                      target="_blank"
+                      href={project.sourceCode}
+                    >
+                      Source Code
                     </a>
                   </button>
-                  <button className={secondaryButton}>
-                    <a className={projectLink} target="_blank" href="#">
-                      Source Code
+                  <button className={primaryButton}>
+                    <a
+                      className={projectLink}
+                      target="_blank"
+                      href={project.liveLink}
+                    >
+                      View Live
                     </a>
                   </button>
                 </div>
@@ -92,18 +110,27 @@ const ProjectsPage = ({ data }) => {
                   <h3 className={projectTitle}>{project.title}</h3>
                   <p className={projectDescription}>{project.description}</p>
                   <div className={technologyUsedContainer}>
-                    {["HTML", "CSS", "JavaScript"].map((item) => {
+                    {project.technologyUsed.map((item) => {
                       return <small className={technologyItem}>{item}</small>;
                     })}
                   </div>
-                  <button className={primaryButton}>
-                    <a className={projectLink} target="_blank" href="#">
-                      View Live
+
+                  <button className={secondaryButton}>
+                    <a
+                      className={projectLink}
+                      target="_blank"
+                      href={project.sourceCode}
+                    >
+                      Source Code
                     </a>
                   </button>
-                  <button className={secondaryButton}>
-                    <a className={projectLink} target="_blank" href="#">
-                      Source Code
+                  <button className={primaryButton}>
+                    <a
+                      className={projectLink}
+                      target="_blank"
+                      href={project.liveLink}
+                    >
+                      View Live
                     </a>
                   </button>
                 </div>
@@ -118,7 +145,13 @@ const ProjectsPage = ({ data }) => {
             );
           })}
         </div>
-        <Link to="/">Back to home</Link>
+        <Link className={backLink} to="/">
+          <FontAwesomeIcon
+            style={{ marginRight: "10px" }}
+            icon={faLongArrowAltLeft}
+          />
+          Back to home
+        </Link>
       </main>
     </Layout>
   );

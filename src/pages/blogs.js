@@ -15,7 +15,7 @@ import {
   blogDescription,
   postedText,
 } from "../styles/blogs.module.css";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
 // markup
 const BlogsPage = () => {
@@ -29,12 +29,18 @@ const BlogsPage = () => {
             title
             description
             date(fromNow: true)
+            cover {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
         }
       }
     }
   `);
   const posts = data.allMdx.nodes;
+  console.log(posts[0].frontmatter.cover);
   return (
     <Layout>
       <main>
@@ -51,9 +57,9 @@ const BlogsPage = () => {
         <div className={blogContainer}>
           {posts.map((post) => (
             <div className={blogCard} key={post.id}>
-              <StaticImage
+              <GatsbyImage
                 className={blogImage}
-                src="../images/searchBlog.jpg"
+                image={post.frontmatter.cover.childImageSharp.gatsbyImageData}
                 alt="magnifying glass"
                 placeholder="dominantColor"
                 width={300}

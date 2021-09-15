@@ -45,6 +45,7 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
+  text-align: left;
   justify-self: center;
   width: 300px;
   height: auto;
@@ -89,14 +90,17 @@
 
 @media only screen and (max-width: 600px) {
   .heroHeading {
-    font-size: var(--text-28);
+    font-size: var(--text-20);
   }
   .heroSubHeading {
-    font-size: var(--text-20);
+    font-size: var(--text-16);
     width: 90%;
   }
   .blog-container {
     margin: 0px 5px;
     grid-template-columns: 1fr;
+  }
+  .blog-link {
+    text-align: center;
   }
 }

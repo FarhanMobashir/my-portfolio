@@ -39,6 +39,10 @@
   color: var(--black-04);
 }
 
+.active-link {
+  border-bottom: 1px solid var(--black-02);
+}
+
 .nav {
   display: flex;
 }
@@ -74,6 +78,7 @@
   .header {
     padding: 0px;
     margin: 0px;
+    box-shadow: 10px 10px 0px black;
   }
   .navItems {
     margin-left: 4px;

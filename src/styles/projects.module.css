@@ -104,23 +104,28 @@
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
-  border: none;
-  margin-right: 5px;
+  border: 2px solid var(--primary-color);
 }
 
 .secondary-button {
   color: var(--black-03);
   padding: 8px 15px;
   border-radius: 5px;
+  background-color: white;
   border: 2px solid var(--black-03);
+  margin-right: 10px;
+}
+
+.back-link {
+  color: black;
 }
 
 @media only screen and (max-width: 600px) {
   .heroHeading {
-    font-size: var(--text-28);
+    font-size: var(--text-20);
   }
   .heroSubHeading {
-    font-size: var(--text-20);
+    font-size: var(--text-16);
     width: 90%;
   }
   .projects-container {
