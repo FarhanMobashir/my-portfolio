@@ -234,7 +234,7 @@ const IndexPage = ({ data }) => {
               className={profileImage}
               src="../images/profile.png"
               alt="profile picture"
-              placeholder="blurred"
+              placeholder="tracedSVG"
               width={300}
               height={300}
             />
