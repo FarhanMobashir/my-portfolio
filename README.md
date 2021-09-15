@@ -6,7 +6,10 @@
 <h1 align="center">
   This Site is built with Gatsby
 </h1>
-## If you want to build one follow the steps
+<h4 align="center">
+  If you want to build one follow the steps
+</h4>
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
