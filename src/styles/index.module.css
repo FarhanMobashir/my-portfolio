@@ -103,6 +103,7 @@
 
 .social-icon {
   font-size: 30px;
+  color: var(--black-02);
 }
 
 /* project-section */
@@ -190,6 +191,7 @@
 }
 
 .project-blog-section {
+  margin-bottom: 24px;
 }
 
 .project-blog-heading-container {
@@ -257,10 +259,9 @@
   }
   .project-card {
     flex-direction: column;
+    width: 300px;
   }
-  .project-card-alt {
-    flex-direction: column-reverse;
-  }
+
   .project-image {
     width: 140px;
   }
