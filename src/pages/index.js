@@ -35,6 +35,7 @@ import {
   contentContainer,
   projectImageContainer,
   viewAll,
+  socialIcon,
 } from "../styles/index.module.css";
 
 import {
@@ -195,7 +196,7 @@ const IndexPage = ({ data }) => {
                     className={SocialLinks}
                     href="https://github.com/FarhanMobashir"
                   >
-                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon className={socialIcon} icon={faGithub} />
                   </a>
                 </li>
                 <li className={SocialIconItems}>
@@ -203,7 +204,7 @@ const IndexPage = ({ data }) => {
                     className={SocialLinks}
                     href="https://twitter.com/MobashirFarhan"
                   >
-                    <FontAwesomeIcon icon={faTwitter} />
+                    <FontAwesomeIcon className={socialIcon} icon={faTwitter} />
                   </a>
                 </li>
                 <li className={SocialIconItems}>
@@ -211,7 +212,7 @@ const IndexPage = ({ data }) => {
                     className={SocialLinks}
                     href="https://www.linkedin.com/in/mobashirfarhan/"
                   >
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <FontAwesomeIcon className={socialIcon} icon={faLinkedin} />
                   </a>
                 </li>
                 <li className={SocialIconItems}>
@@ -219,7 +220,10 @@ const IndexPage = ({ data }) => {
                     className={SocialLinks}
                     href="https://www.instagram.com/farhan_mobashir001/?hl=en"
                   >
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <FontAwesomeIcon
+                      className={socialIcon}
+                      icon={faInstagram}
+                    />
                   </a>
                 </li>
               </ul>

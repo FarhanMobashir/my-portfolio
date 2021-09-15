@@ -100,20 +100,20 @@ export default function Layout({
             </a>
           </li>
           <li className={footerItems}>
-            <Link
+            <a
               className={footerLinks}
               href="https://www.instagram.com/farhan_mobashir001/?hl=en"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faInstagram} />
-            </Link>
+            </a>
           </li>
           <li className={footerItems}>
-            <Link
+            <a
               className={footerLinks}
               href="https://www.youtube.com/channel/UC2Bs66DI7Lu4aKFdsUdZQQg"
             >
               <FontAwesomeIcon className={toggleIcon} icon={faYoutube} />
-            </Link>
+            </a>
           </li>
         </ul>
       </footer>
