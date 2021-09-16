@@ -76,7 +76,7 @@ const bioData = {
   Casual:
     "This is Mobashir Farhan, and he enjoys watching the sunset, eating candyfloss and waking up late in the morning.Just kidding, more importantly his friend will describe him as someone who loves to draw beautiful things, cook delicious foods, play guitar and loves to motivate them to start learning programming which sometimes irritate them 😂",
   Professional:
-    "Mobashir is a software engineer and designer who spends most of his time buiding softwares that solve user's problems giving them seamless experiences. He also design User Interfaces(UI) in Figma and he love that. In his free time he learns about UX research and medical science. Besides, he also loves the subject of information security and wants to contribute in making the internet a safer and healthy place. He do all this as a freelancer. Outside of that, he's useless 😄",
+    "Mobashir is a software developer and designer who spends most of his time buiding softwares that solve user's problems giving them seamless experiences. He also design User Interfaces(UI) in Figma and he love that. In his free time he learns about UX research and medical science. Besides, he also loves the subject of information security and wants to contribute in making the internet a safer and healthy place. He do all this as a freelancer. Outside of that, he's useless 😄",
 };
 
 export const query = graphql`
