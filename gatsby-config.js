@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.mobashirfarhan.tech`,
     title: "Mobashir Farhan",
-    description: "This is Mobashir portfolio website",
+    description:
+      "Mobashir is a software developer and designer who spends most of his time buiding softwares that solve user's problems giving them seamless experiences.",
     image: "https://i.ibb.co/52ns5nT/prof.jpg",
   },
   plugins: [
