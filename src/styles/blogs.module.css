@@ -67,6 +67,7 @@
   margin: 5px 0px;
   padding: 0px;
   font-size: var(--text-16);
+  color: var(--black-05);
 }
 
 .posted-text {
@@ -88,6 +89,10 @@
   color: var(--black-02);
   padding: 0px;
   margin: 5px 0px;
+}
+
+.back-link {
+  color: var(--black-05);
 }
 
 @media only screen and (max-width: 600px) {

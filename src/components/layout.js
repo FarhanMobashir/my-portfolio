@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import * as React from "react";
 import { Seo } from "./seo";
 import "../styles/global.css";
@@ -15,6 +15,7 @@ import {
   footerItems,
   footerList,
   socialIcon,
+  toggleIcon,
 } from "../styles/layout.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,7 +25,7 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 export default function Layout({
   children,
   title = false,
@@ -32,21 +33,60 @@ export default function Layout({
   image = false,
   path = false,
 }) {
-  const data = useStaticQuery(graphql`
-    query GetSiteTitle {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query GetSiteTitle {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `);
 
   const activeLink = {
     borderBottomColor: "grey",
     borderBottomWidth: "1px",
     color: "#ff5678",
   };
+
+  // console.log(
+  //   window
+  //     .getComputedStyle(document.documentElement)
+  //     .getPropertyValue("--black-03")
+  // );
+
+  const [darkMode, setDarkmode] = React.useState(false);
+
+  function DarkModeToggle() {
+    setDarkmode(!darkMode);
+    console.log(darkMode);
+  }
+
+  React.useEffect(() => {
+    if (darkMode) {
+      document.documentElement.style.setProperty("--bg-color", "#07001c");
+      // document.documentElement.style.setProperty("--black-01", "#1c1c1c");
+      // document.documentElement.style.setProperty("--black-02", "#b0b0b0");
+      // document.documentElement.style.setProperty("--black-03", "#cccccc");
+      // document.documentElement.style.setProperty("--black-04", "#e8e8e8");
+      // document.documentElement.style.setProperty("--black-05", "white");
+      document.documentElement.style.setProperty("--black-01", "black");
+      document.documentElement.style.setProperty("--black-02", "white");
+      document.documentElement.style.setProperty("--black-03", "white");
+      document.documentElement.style.setProperty("--black-04", "white");
+      document.documentElement.style.setProperty("--black-05", "white");
+      document.documentElement.style.setProperty("--btn-black", "black");
+    } else {
+      document.documentElement.style.setProperty("--bg-color", "#ffff");
+      document.documentElement.style.setProperty("--black-01", "white");
+      document.documentElement.style.setProperty("--black-02", "#909090");
+      document.documentElement.style.setProperty("--black-03", "#4a4a4a");
+      document.documentElement.style.setProperty("--black-04", "#353535");
+      document.documentElement.style.setProperty("--black-05", "black");
+      document.documentElement.style.setProperty("--black-03", "#4a4a4a");
+      document.documentElement.style.setProperty("--btn-black", "#4a4a4a");
+    }
+  }, [darkMode]);
 
   //   const meta = data?.site?.sitemetadata ?? {};
   return (
@@ -68,9 +108,13 @@ export default function Layout({
                 Blogs
               </Link>
             </li>
-            {/* <li className={navItems}>
-              <FontAwesomeIcon className={toggleIcon} icon={faSun} />
-            </li> */}
+            <li onClick={DarkModeToggle} className={navItems}>
+              <FontAwesomeIcon
+                className={toggleIcon}
+                style={darkMode ? { transition: "1s" } : { transition: "1s" }}
+                icon={darkMode ? faMoon : faSun}
+              />
+            </li>
           </ul>
         </nav>
       </header>

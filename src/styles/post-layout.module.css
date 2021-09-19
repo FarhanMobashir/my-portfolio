@@ -8,6 +8,7 @@
   font-size: var(--text-40);
   margin-top: 10px;
   margin-bottom: 0px;
+  color: var(--black-05);
 }
 
 .blog-tags {
@@ -17,8 +18,13 @@
   border-radius: 30px;
 }
 
+.blog-content {
+  color: var(--black-05);
+}
+
 .posted-date {
   margin-left: 10px;
+  color: var(--black-05);
 }
 
 @media only screen and (max-width: 600px) {

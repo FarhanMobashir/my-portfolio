@@ -65,9 +65,11 @@
 
 .project-title {
   font-size: var(--text-28);
+  color: var(--black-05);
 }
 .project-description {
   font-size: var(--text-16);
+  color: var(--black-05);
 }
 
 .project-link {
@@ -108,16 +110,16 @@
 }
 
 .secondary-button {
-  color: var(--black-03);
+  color: var(--btn-black);
   padding: 8px 15px;
   border-radius: 5px;
   background-color: white;
-  border: 1px solid var(--black-03);
+  border: 1px solid var(--btn-black);
   margin-right: 10px;
 }
 
 .back-link {
-  color: black;
+  color: var(--black-05);
 }
 
 @media only screen and (max-width: 600px) {

@@ -73,7 +73,11 @@ const ProjectsPage = ({ data }) => {
                   <p className={projectDescription}>{project.description}</p>
                   <div className={technologyUsedContainer}>
                     {project.technologyUsed.map((item) => {
-                      return <small className={technologyItem}>{item}</small>;
+                      return (
+                        <small key={item} className={technologyItem}>
+                          {item}
+                        </small>
+                      );
                     })}
                   </div>
 
