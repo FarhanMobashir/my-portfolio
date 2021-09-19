@@ -8,6 +8,7 @@ import {
   blogTags,
   postedDate,
   tagsContainer,
+  blogContent,
 } from "../styles/post-layout.module.css";
 
 export default function PostLayout({ children, pageContext }) {
@@ -27,7 +28,7 @@ export default function PostLayout({ children, pageContext }) {
           <small className={blogTags}>{tag}</small>
         ))}
       </div>
-      {children}
+      <div className={blogContent}>{children}</div>
       <Link to="/blogs"> &larr; go back</Link>
     </Layout>
   );
