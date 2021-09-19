@@ -14,6 +14,7 @@ import {
   blogLink,
   blogDescription,
   postedText,
+  backLink,
 } from "../styles/blogs.module.css";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
@@ -77,7 +78,7 @@ const BlogsPage = () => {
           ))}
         </div>
 
-        <Link style={{ marginLeft: "10%" }} to="/">
+        <Link className={backLink} style={{ marginLeft: "10%" }} to="/">
           &larr; Back to home
         </Link>
       </main>
