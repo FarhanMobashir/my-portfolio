@@ -5,6 +5,8 @@ module.exports = {
     description:
       "Mobashir is a software developer and designer who spends most of his time buiding softwares that solve user's problems giving them seamless experiences.",
     image: "https://i.ibb.co/52ns5nT/prof.jpg",
+    googleSeo: "google-site-verification",
+    googleContent: "g0kA0W5zXg_NrV-r5fIX4IbTZXvqpmDLbMYKhaKDm5o",
   },
   plugins: [
     "gatsby-plugin-react-helmet",

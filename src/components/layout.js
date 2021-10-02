@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Seo } from "./seo";
 import "../styles/global.css";
@@ -34,15 +34,15 @@ export default function Layout({
   image = false,
   path = false,
 }) {
-  // const data = useStaticQuery(graphql`
-  //   query GetSiteTitle {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
+  const data = useStaticQuery(graphql`
+    query GetSiteTitle {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
 
   const activeLink = {
     borderBottomColor: "grey",
@@ -56,14 +56,7 @@ export default function Layout({
   //     .getPropertyValue("--black-03")
   // );
 
-  const [darkMode, setDarkmode] = React.useState(false);
-
   const { state, dispatch } = React.useContext(Context);
-
-  // function DarkModeToggle() {
-  //   setDarkmode(!darkMode);
-  //   console.log(darkMode);
-  // }
 
   React.useEffect(() => {
     if (state.isDark) {
@@ -91,10 +84,15 @@ export default function Layout({
     }
   }, [state.isDark]);
 
-  //   const meta = data?.site?.sitemetadata ?? {};
+  const meta = data?.site?.sitemetadata ?? {};
   return (
     <>
-      <Seo title={title} description={description} image={image} path={path} />
+      <Seo
+        title={meta.title}
+        description={description}
+        image={image}
+        path={path}
+      />
       <header className={header}>
         <Link className={homeLink} to="/" activeStyle={activeLink}>
           mobashir.

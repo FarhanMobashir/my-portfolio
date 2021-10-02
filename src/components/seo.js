@@ -29,11 +29,18 @@ export function Seo(props) {
 
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
-      <meta property="og:description" content="website" />
+      <meta
+        property="og:description"
+        content="Mobashir is a software developer and designer who spends most of his time buiding softwares that solve user's problems giving them seamless experiences."
+      />
       {image && <meta name="og:image" content={image} />}
       <meta name="twitter:card" content="summary-large-image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta
+        name="google-site-verification"
+        content="g0kA0W5zXg_NrV-r5fIX4IbTZXvqpmDLbMYKhaKDm5o"
+      />
     </Helmet>
   );
 }
