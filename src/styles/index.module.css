@@ -238,7 +238,8 @@
     font-size: var(--text-24);
   }
   .heroSubHeading {
-    font-size: var(--text-16);
+    font-size: var(--text-14);
+    padding: 10px 10px;
   }
   .about-section-container {
     flex-direction: column-reverse;

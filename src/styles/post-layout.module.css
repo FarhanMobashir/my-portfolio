@@ -27,6 +27,10 @@
   color: var(--black-05);
 }
 
+.back-link {
+  color: var(--black-05);
+}
+
 @media only screen and (max-width: 600px) {
   .blog-title {
     font-size: var(--text-28);

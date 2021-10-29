@@ -10,6 +10,7 @@ import {
   postedDate,
   tagsContainer,
   blogContent,
+  backLink,
 } from "../styles/post-layout.module.css";
 
 export default function PostLayout({ children, pageContext }) {
@@ -43,7 +44,10 @@ export default function PostLayout({ children, pageContext }) {
           {children}
         </MDXProvider>
       </div>
-      <Link to="/blogs"> &larr; go back</Link>
+      <Link to="/blogs" className={backLink}>
+        {" "}
+        &larr; go back
+      </Link>
     </Layout>
   );
 }
