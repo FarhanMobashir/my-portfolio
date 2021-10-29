@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "./layout";
+import { MDXProvider } from "@mdx-js/react";
 import {
   authorDateContainer,
   blogTitle,
@@ -28,7 +29,20 @@ export default function PostLayout({ children, pageContext }) {
           <small className={blogTags}>{tag}</small>
         ))}
       </div>
-      <div className={blogContent}>{children}</div>
+      <div className={blogContent}>
+        <MDXProvider
+          components={
+            {
+              // Map HTML element tag to React component
+              // h1: (props) => <h1 {...props} style={{ color: "red" }} />,
+              // Or define component inline
+              // p: (props) => <p {...props} style={{ color: "black" }} />,
+            }
+          }
+        >
+          {children}
+        </MDXProvider>
+      </div>
       <Link to="/blogs"> &larr; go back</Link>
     </Layout>
   );
